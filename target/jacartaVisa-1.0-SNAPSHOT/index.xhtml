@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+<head>
+    <title>Bienvenue en Indonésien</title>
+    
+    <!-- Intégration de Bootstrap -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"/>
+    
+</head>
+<body class="d-flex justify-content-center align-items-center vh-100 bg-light">
+
+    <div class="container text-center p-4 shadow bg-white rounded" style="max-width: 400px;">
+        <!-- Drapeau de l'Indonésie avec bordure -->
+        <img src="https://upload.wikimedia.org/wikipedia/commons/9/9f/Flag_of_Indonesia.svg" 
+             alt="Drapeau Indonésie" 
+             class="img-fluid mb-3 border border-1 border-secondary rounded" 
+             style="width: 150px;"/>
+
+        <h4 class="mb-2">Bienvenu en Indonesie</h4>
+
+        <h:form>
+          
+
+            <!-- Bouton Commencer -->
+            <h:commandButton value="Découvrir" action="home" 
+                             styleClass="btn btn-danger w-100"/>
+        </h:form>
+        
+        <h:form>
+        <!-- Formulaire de connexion -->
+     
+            <div class="mb-3">
+                <h:outputLabel for="email" value="Email :" class="form-label"/>
+                <h:inputText id="email" value="#{welcomeBean.email}" class="form-control" required="true"/>
+                 <h:message for="email" style="color: red;"/>
+            </div>
+
+            <div class="mb-3">
+                <h:outputLabel for="password" value="Mot de passe :" class="form-label"/>
+                <h:inputSecret id="password" value="#{welcomeBean.password}" class="form-control" required="true"/>
+                 <h:message for="password" style="color: red;"/>
+            </div>
+
+            <!-- Message d'erreur -->
+            <h:messages globalOnly="true" style="color: red;"/>
+            <br/>
+            <!-- Bouton unique pour l'authentification -->
+            <h:commandButton value="Découvrir" action="#{welcomeBean.sAuthentifier}"
+                     styleClass="btn btn-secondary w-100 p-3"/>
+       
+        </h:form>
+        
+        <a href="ajoute_utilisateur.xhtml" >Céer compte</a>
+    
+    </div>
+
+    <!-- Bootstrap JS (nécessaire si vous utilisez des composants interactifs comme modals, tooltips, etc.) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>
